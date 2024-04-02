@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><%= user.username %></title>
+</head>
+<body>
+    <h1><%= user.username %></h1>
+    <p>Bio/Description: <%= description %></p>
+    <h2>Past Reviews</h2>
+    <ul>
+      <% userReviews.forEach(review => { %>
+        <li>
+          <p>Rating: <%= review.rating %></p>
+          <p>Comment: <%= review.comment %></p>
+          <p>Coffee Shop: <%= review.coffeeShopName %></p>
+        </li>
+      <% }); %>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>For You Page</title>
+</head>
+<body>
+  <div class="container">
+    <section>
+      <h2>For You Page</h2>
+      <% coffeeShops.forEach(coffeeShop => { %>
+      <div class="review">
+        <p1 class="image-name">
+          <a href="/coffeeshop/<%= coffeeShop._id %>" class="coffee-shop-link">
+            <%= coffeeShop ? coffeeShop.name : '' %>
+          </a>
+        </p1>
+        <div class="image-text-container">
+            <img src="images/<%= getImageFilename(coffeeShop.name) %>" alt="<%= coffeeShop ? coffeeShop.name : '' %>">
+          <p2 class="review-text"><%= coffeeShop ? coffeeShop.description : '' %></p2>
+        </div>
+        <div class="ratings"></div>
+      </div>
+      <% }); %>
+    </section>
+  </div>
+  
+  <div class="coffeeshop-container"></div>
+</body>
+</html>
