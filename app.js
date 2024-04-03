@@ -327,3 +327,7 @@ app.get('/logout', (req, res) => {
 app.listen(PORT, () => {
   console.log(`App listening on PORT ${PORT}`);
 });
+
+app.get('/about', (req, res) => {
+  res.render('about', { loggedIn: req.session.loggedIn });
+})
